@@ -5,7 +5,6 @@ import { FcNext, FcPrevious } from 'react-icons/fc';
 import { Form } from "react-bootstrap";
 import States from "../../shared/indian-states";
 import { Operations as ProductOperations } from "../../redux/duck/index";
-import ProductModal from "../../shared/product-modal";
 
 class AddressForm extends React.Component {
 
@@ -86,7 +85,7 @@ class AddressForm extends React.Component {
                     <Form.Control type="text"
                         placeholder="Near Durga Mata Mandir"
                         onChange={event => this.setState({ address1: event.target.value })}
-                        value={this.props.address?.address1}
+                        value={this.state.address1}
                     />
                 </Form.Group>
                 <Form.Group controlId="addressLine2">
@@ -94,14 +93,14 @@ class AddressForm extends React.Component {
                     <Form.Control type="text"
                         placeholder="Apartment, studio, or floor"
                         onChange={event => this.setState({ address2: event.target.value })}
-                        value={this.props.address?.address2}
+                        value={this.state.address2}
                     />
                 </Form.Group>
                 <Form.Group controlId="country">
                     <Form.Label>Country</Form.Label>
                     <Form.Control as="select"
                         onChange={event => this.setState({ country: event.target.value })}
-                        value={this.props.address?.country}
+                        value={this.state.country}
                     >
                         <option>Choose...</option>
                         <option>India</option>
@@ -115,10 +114,10 @@ class AddressForm extends React.Component {
                     <Form.Label>State</Form.Label>
                     <Form.Control as="select"
                         onChange={event => this.setState({ state: event.target.value })}
-                        value={this.props.address?.state}
+                        value={this.state.state}
                     >
                         <option>Choose...</option>
-                        {(this.state.country === "India" || this.props.address?.country === "India") && States.map((state) => {
+                        {(this.state.country === "India" || this.state.country === "India") && States.map((state) => {
                             return (<option key={state}>{state}</option>)
                         })}
                     </Form.Control>
@@ -131,7 +130,7 @@ class AddressForm extends React.Component {
                     <Form.Control type="text"
                         placeholder="Nagpur"
                         onChange={event => this.setState({ city: event.target.value })}
-                        value={this.props.address?.city}
+                        value={this.state.city}
                     />
                 </Form.Group>
             </Form>

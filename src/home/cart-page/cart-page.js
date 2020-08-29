@@ -4,8 +4,6 @@ import { Button, Card } from 'react-bootstrap';
 import { FcPrevious } from 'react-icons/fc';
 import { FaRupeeSign } from 'react-icons/fa';
 import { AiFillMinusCircle, AiFillPlusCircle } from 'react-icons/ai';
-import { TiDelete } from 'react-icons/ti';
-// import States from "../../shared/indian-states";
 import { Operations as ProductOperations } from "../../redux/duck/index";
 import ProductModal from "../../shared/product-modal";
 
@@ -105,7 +103,6 @@ class CartPage extends React.Component {
             >
                 <Card.Header>Delivery Address</Card.Header>
                 <Card.Body>
-                    {/* <Card.Title>{"light"} Delivery Address </Card.Title> */}
                     <Card.Text>
                         {address?.address1}<br />
                         {address?.address2}<br />
@@ -118,7 +115,6 @@ class CartPage extends React.Component {
     }
 
     render() {
-        // if (this.props.products?.length > 0) {
         return (
             <React.Fragment>
                     <ProductModal show={this.state.showmodal} onHide={() =>this.setState({showmodal: false})}/>
@@ -168,7 +164,6 @@ class CartPage extends React.Component {
                 </div>
             </React.Fragment>
         );
-        // } else return ''
     }
 }
 
