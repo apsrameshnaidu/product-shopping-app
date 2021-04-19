@@ -1,4 +1,5 @@
-const states = ["Andhra Pradesh",
+const states = [
+    "Andhra Pradesh",
     "Arunachal Pradesh",
     "Assam",
     "Bihar",
